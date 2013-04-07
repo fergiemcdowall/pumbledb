@@ -1,21 +1,22 @@
-Pumble
-======
+##Pumble
 
 Pumble is a Node.js key-value server that uses LevelDB
 
-#Installation
+##Installation
 
-git clone https://github.com/fergiemcdowall/pumble.git
+    git clone https://github.com/fergiemcdowall/pumble.git
+    npm install
 
-npm install
+##Usage
 
-#Usage
+**Putting**
 
-##Putting
-http://localhost:3000/put?key=name&value=John%20F.%20Kennedy
+    http://localhost:3000/put?key=name&value=John%20F.%20Kennedy
 
-##Getting
-http://localhost:3000/get?key=name
+**Getting**
 
-##Deleting
-http://localhost:3000/delete?key=name
+    http://localhost:3000/get?key=name
+
+**Deleting**
+
+    http://localhost:3000/delete?key=name
