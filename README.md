@@ -5,6 +5,7 @@ Pumble is a Node.js key-value server that uses LevelDB
 ##Installation
 
     git clone https://github.com/fergiemcdowall/pumble.git
+    cd pumble
     npm install
 
 ##Usage
