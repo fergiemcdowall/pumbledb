@@ -27,14 +27,11 @@ if ('development' == app.get('env')) {
 
 //Put a key-value pair into the store, overwriting any earlier values associated with the given key
 app.get('/put', function(req, res){
-  //2) put a key & value
   db.put(req.query["key"], req.query["value"], function (err) {
     if (err) return console.log('Ooops!', err) // some kind of I/O error
-    // 3) fetch by key
     db.get(req.query["key"], function (err, value) {
       if (err) return console.log('Ooops!', err); // likely the key was not found
-      // ta da!
-      res.send('success -> ' + req.query["key"] + '=' + value);
+      res.send('added');
     })
   })
 });
@@ -51,12 +48,23 @@ app.get('/get', function(req, res){
 app.get('/delete', function(req, res){
   db.del(req.query["key"], function (err) {
     if (err) return res.send('Ooops! ' + err);
-    res.send('deleted -> ' + req.query["key"]);
+    res.send('deleted');
   })
 });
 
 app.get('/', function(req, res){
-  res.send('hello');
+  res.send('Pumble welcomes you.'
+           + '<br>'
+           + 'Visit <a href="https://github.com/fergiemcdowall/pumble">https://github.com/fergiemcdowall/pumble</a> for updates, howtos, and general information.'
+           + '<br>'
+           + '<b>Or</b> jump right in by'
+           + '<br><b>Putting</b>'
+           + '<br><a href="http://localhost:3000/put?key=name&value=John%20F.%20Kennedy">http://localhost:3000/put?key=name&value=John%20F.%20Kennedy</a>'
+           + '<br><b>Getting</b>'
+           + '<br><a href="http://localhost:3000/get?key=name">http://localhost:3000/get?key=name</a>'
+           + '<br><b>Deleting</b>'
+           + '<br><a href="http://localhost:3000/delete?key=name">http://localhost:3000/delete?key=name</a>'
+           );
 });
 
 http.createServer(app).listen(app.get('port'), function(){
