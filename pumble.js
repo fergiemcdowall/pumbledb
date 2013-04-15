@@ -18,7 +18,7 @@ app.use(express.favicon());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'UI')));
 
 
 //Put a key-value pair into the store using GET, overwriting any earlier values associated with the given key
@@ -76,6 +76,7 @@ app.get('/get', function(req, res){
   })
 });
 
+
 //delete a value from the store
 app.get('/delete', function(req, res){
   db.del(req.query["key"], function (err) {
@@ -84,20 +85,6 @@ app.get('/delete', function(req, res){
   })
 });
 
-//a simple form for manually uploading text key-values
-app.get('/posttextUI', function(req, res){
-  res.sendfile('www/submittext.html');
-});
-
-//a simple form for uploading text keys pointing to binary values
-app.get('/postfileUI', function(req, res){
-  res.sendfile('www/submitfile.html');
-});
-
-//intro page
-app.get('/', function(req, res){
-  res.sendfile('www/index.html');
-});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
