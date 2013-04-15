@@ -1,8 +1,8 @@
 #PumbleDB
 
-Pumble is a simple NOSQL database server written for Node.js using [LevelUP](https://github.com/rvagg/node-levelup/).
+PumbleDB is the NOSQL Key-Value server for Node.js.
 
-Pumble allows getting, putting and deleting of Key-Value pairs over HTTP. It stores these values in a fast, persistant datastore on the server.
+PumbleDB allows you to get, put and delete Key-Value pairs over HTTP. It stores these values in a fast, persistant datastore on the server. PumbleDB uses [LevelUP](https://github.com/rvagg/node-levelup/).
 
 ##Installation
 
