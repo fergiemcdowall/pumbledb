@@ -1,28 +1,52 @@
 #Pumble
 
-Pumble is a simple and powerful NOSQL database written for Node.js using LevelDB.
+Pumble is a simple NOSQL database server written for Node.js using [LevelUP](https://github.com/rvagg/node-levelup/).
+
+Pumble allows getting, putting and deleting of Key-Value pairs over HTTP. It stores these values in a fast, persistant datastore on the server.
 
 ##Installation
 
     git clone https://github.com/fergiemcdowall/pumble.git
     cd pumble
     npm install
+    
+Note: Installation on Windows is currently non-trivial, see: https://github.com/rvagg/node-levelup/blob/master/README.md#platforms 
 
 ##Usage
 
-**Putting**
+###Putting
+
+Insert simple key-value pair on any browser via GET
 
     http://localhost:3000/put?key=name&value=John%20F.%20Kennedy
 
-**Getting**
+Insert binary file with cURL via POST, use filename as key
+
+    curl --form value=@image.png localhost:3000/postputfile
+    
+Insert binary file with cURL via POST and specify key
+
+    curl --form value=@image.png --form key=mycoolimage localhost:3000/postputfile
+
+###Getting
+
+Get a simple text value
 
     http://localhost:3000/get?key=name
+    
+Get a file and guess the content type from its key
 
-**Deleting**
+    http://localhost:3000/get?key=name
+    
+Get a file and specify the content type (some Content-Types can be found here http://webdesign.about.com/od/multimedia/a/mime-types-by-content-type.htm)
+
+    http://localhost:3000/get?key=name&Content-Type=image/png
+
+###Deleting
 
     http://localhost:3000/delete?key=name
     
-##Strenths
+##Strengths
 *  **Platform independent**: HTTP in-out. Can be called from anything, anywhere.
 *  **Content agnostic**: Feed Pumble JSON, XML, Blob, LaTeX, something else, or any mixture thereof. Pumble indexes everything.
 *  **Persistant**: If you turn your server off and on again your data is still there
@@ -33,11 +57,9 @@ Pumble is a simple and powerful NOSQL database written for Node.js using LevelDB
 
 ##Weaknesses
 *  Single node only
-*  Not quite as blazing fast as in memory systems (although much more bang for buck, and probably fast enough)
-*  Currently only accepting HTTP GET requests- the limits the size of the Value
+*  Not quite as blazing fast as in memory systems
 
 ##Future releases
-*  Support for POSTing larger Values
 *  Sharding
 
 ##License
