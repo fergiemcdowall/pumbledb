@@ -1,4 +1,4 @@
-#Pumble
+#PumbleDB
 
 Pumble is a simple NOSQL database server written for Node.js using [LevelUP](https://github.com/rvagg/node-levelup/).
 
