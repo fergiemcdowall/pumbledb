@@ -10,13 +10,13 @@ Pumble allows getting, putting and deleting of Key-Value pairs over HTTP. It sto
     cd pumble
     npm install
     
-Note: Windows installation is currently non-trivial, see: https://github.com/rvagg/node-levelup/blob/master/README.md#platforms 
+Note: Installation on Windows is currently non-trivial, see: https://github.com/rvagg/node-levelup/blob/master/README.md#platforms 
 
 ##Usage
 
 ###Putting
 
-Insert simple key-values on any browser via GET
+Insert simple key-value pair on any browser via GET
 
     http://localhost:3000/put?key=name&value=John%20F.%20Kennedy
 
@@ -42,7 +42,7 @@ Get a file and specify the content type (some Content-Types can be found here ht
 
     http://localhost:3000/get?key=name&Content-Type=image/png
 
-**Deleting**
+###Deleting
 
     http://localhost:3000/delete?key=name
     
