@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Pumble by fergiemcdowall</title>
+    <title>PumbleDB by fergiemcdowall</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,22 +15,24 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Pumble</h1>
-        <p>Pumble is a Node.js key-value server that uses LevelDB</p>
+        <h1>PumbleDB</h1>
+        <p>PumbleDB is a Node.js key-value server that uses LevelDB</p>
 
-        <p class="view"><a href="https://github.com/fergiemcdowall/pumble">View the Project on GitHub <small>fergiemcdowall/pumble</small></a></p>
+        <p class="view"><a href="https://github.com/fergiemcdowall/PumbleDB">View the Project on GitHub <small>fergiemcdowall/PumbleDB</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/fergiemcdowall/pumble/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/fergiemcdowall/pumble/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/fergiemcdowall/pumble">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/fergiemcdowall/PumbleDB/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/fergiemcdowall/PumbleDB/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/fergiemcdowall/PumbleDB">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
-        <h1>Pumble</h1>
+        <h1>PumbleDB</h1>
 
-<p>Pumble is a simple and powerful NOSQL database written for Node.js using LevelDB.</p>
+<p>Pumble is a simple NOSQL database server written for Node.js using <a href="https://github.com/rvagg/node-levelup/">LevelUP</a>.</p>
+
+<p>Pumble allows getting, putting and deleting of Key-Value pairs over HTTP. It stores these values in a fast, persistant datastore on the server.</p>
 
 <h2>Installation</h2>
 
@@ -39,24 +41,50 @@ cd pumble
 npm install
 </code></pre>
 
+<p>Note: Installation on Windows is currently non-trivial, see: <a href="https://github.com/rvagg/node-levelup/blob/master/README.md#platforms">https://github.com/rvagg/node-levelup/blob/master/README.md#platforms</a> </p>
+
 <h2>Usage</h2>
 
-<p><strong>Putting</strong></p>
+<h3>Putting</h3>
+
+<p>Insert simple key-value pair on any browser via GET</p>
 
 <pre><code>http://localhost:3000/put?key=name&amp;value=John%20F.%20Kennedy
 </code></pre>
 
-<p><strong>Getting</strong></p>
+<p>Insert binary file with cURL via POST, use filename as key</p>
+
+<pre><code>curl --form value=@image.png localhost:3000/postputfile
+</code></pre>
+
+<p>Insert binary file with cURL via POST and specify key</p>
+
+<pre><code>curl --form value=@image.png --form key=mycoolimage localhost:3000/postputfile
+</code></pre>
+
+<h3>Getting</h3>
+
+<p>Get a simple text value</p>
 
 <pre><code>http://localhost:3000/get?key=name
 </code></pre>
 
-<p><strong>Deleting</strong></p>
+<p>Get a file and guess the content type from its key</p>
+
+<pre><code>http://localhost:3000/get?key=name
+</code></pre>
+
+<p>Get a file and specify the content type (some Content-Types can be found here <a href="http://webdesign.about.com/od/multimedia/a/mime-types-by-content-type.htm">http://webdesign.about.com/od/multimedia/a/mime-types-by-content-type.htm</a>)</p>
+
+<pre><code>http://localhost:3000/get?key=name&amp;Content-Type=image/png
+</code></pre>
+
+<h3>Deleting</h3>
 
 <pre><code>http://localhost:3000/delete?key=name
 </code></pre>
 
-<h2>Strenths</h2>
+<h2>Strengths</h2>
 
 <ul>
 <li> <strong>Platform independent</strong>: HTTP in-out. Can be called from anything, anywhere.</li>
@@ -70,12 +98,10 @@ npm install
 
 <ul>
 <li> Single node only</li>
-<li> Not quite as blazing fast as in memory systems (although much more bang for buck, and probably fast enough)</li>
-<li> Currently only accepting HTTP GET requests- the limits the size of the Value</li>
+<li> Not quite as blazing fast as in memory systems</li>
 </ul><h2>Future releases</h2>
 
 <ul>
-<li> Support for POSTing larger Values</li>
 <li> Sharding</li>
 </ul><h2>License</h2>
 
