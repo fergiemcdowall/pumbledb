@@ -4,7 +4,7 @@ PumbleDB is a NOSQL Key-Value server written in Node.js.
 
 Its a bit like a simplified, private [Amazon S3](aws.amazon.com/s3/) without authentication.
 
-PumbleDB allows you to get, put and delete Key-Value pairs over HTTP. It stores these values in a fast, persistant datastore on the server. PumbleDB datastore uses [LevelUP](https://github.com/rvagg/node-levelup/).
+PumbleDB allows you to get, put and delete Key-Value pairs over HTTP. It stores these values in a fast, persistant datastore on the server. PumbleDB's datastore uses [LevelUP](https://github.com/rvagg/node-levelup/).
 
 **PumbleDB Homepage:** http://fergiemcdowall.github.io/PumbleDB/
 
