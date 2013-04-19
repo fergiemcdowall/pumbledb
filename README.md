@@ -12,7 +12,7 @@ PumbleDB allows you to get, put and delete Key-Value pairs over HTTP. It stores 
 
 ##Installation
 
-    git clone https://github.com/fergiemcdowall/pumble.git
+    git clone https://github.com/fergiemcdowall/PumbleDB.git
     cd pumble
     npm install
     
