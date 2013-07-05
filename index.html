@@ -18,17 +18,18 @@
         <h1>PumbleDB</h1>
         <p>PumbleDB is a NOSQL Key-Value server written in Node.js</p>
 
-        <p class="view"><a href="https://github.com/fergiemcdowall/PumbleDB">View the Project on GitHub <small>fergiemcdowall/PumbleDB</small></a></p>
+        <p class="view"><a href="https://github.com/fergiemcdowall/pumbledb">View the Project on GitHub <small>fergiemcdowall/pumbledb</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/fergiemcdowall/PumbleDB/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/fergiemcdowall/PumbleDB/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/fergiemcdowall/PumbleDB">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/fergiemcdowall/pumbledb/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/fergiemcdowall/pumbledb/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/fergiemcdowall/pumbledb">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
-        <h1>PumbleDB</h1>
+        <h1>
+<a name="pumbledb" class="anchor" href="#pumbledb"><span class="octicon octicon-link"></span></a>PumbleDB</h1>
 
 <p>PumbleDB is a NOSQL Key-Value server written in Node.js.</p>
 
@@ -36,11 +37,12 @@
 
 <p>PumbleDB allows you to get, put and delete Key-Value pairs over HTTP. It stores these values in a fast, persistant datastore on the server. PumbleDB's datastore uses <a href="https://github.com/rvagg/node-levelup/">LevelUP</a>.</p>
 
-<p><strong>PumbleDB Homepage:</strong> <a href="http://fergiemcdowall.github.io/PumbleDB/">http://fergiemcdowall.github.io/PumbleDB/</a></p>
+<p><strong>PumbleDB Homepage:</strong> <a href="http://fergiemcdowall.github.io/pumbledb/">http://fergiemcdowall.github.io/pumbledb/</a></p>
 
-<p><strong>PumbleDB on GitHub:</strong> <a href="https://github.com/fergiemcdowall/PumbleDB/">https://github.com/fergiemcdowall/PumbleDB/</a></p>
+<p><strong>PumbleDB on GitHub:</strong> <a href="https://github.com/fergiemcdowall/pumbledb/">https://github.com/fergiemcdowall/pumbledb/</a></p>
 
-<h2>Installation</h2>
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <pre><code>git clone https://github.com/fergiemcdowall/PumbleDB.git
 cd PumbleDB
@@ -49,9 +51,11 @@ npm install
 
 <p>Note: Installation on Windows is currently non-trivial, see: <a href="https://github.com/rvagg/node-levelup/blob/master/README.md#platforms">https://github.com/rvagg/node-levelup/blob/master/README.md#platforms</a> </p>
 
-<h2>Usage</h2>
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<h3>Putting</h3>
+<h3>
+<a name="putting" class="anchor" href="#putting"><span class="octicon octicon-link"></span></a>Putting</h3>
 
 <p>Insert simple key-value pair on any browser via GET</p>
 
@@ -68,7 +72,8 @@ npm install
 <pre><code>curl --form value=@image.png --form key=mycoolimage localhost:3000/postputfile
 </code></pre>
 
-<h3>Getting</h3>
+<h3>
+<a name="getting" class="anchor" href="#getting"><span class="octicon octicon-link"></span></a>Getting</h3>
 
 <p>Get a simple text value</p>
 
@@ -85,12 +90,14 @@ npm install
 <pre><code>http://localhost:3000/get?key=name&amp;Content-Type=image/png
 </code></pre>
 
-<h3>Deleting</h3>
+<h3>
+<a name="deleting" class="anchor" href="#deleting"><span class="octicon octicon-link"></span></a>Deleting</h3>
 
 <pre><code>http://localhost:3000/delete?key=name
 </code></pre>
 
-<h2>Strengths</h2>
+<h2>
+<a name="strengths" class="anchor" href="#strengths"><span class="octicon octicon-link"></span></a>Strengths</h2>
 
 <ul>
 <li> <strong>Platform independent</strong>: HTTP in-out. Can be called from anything, anywhere.</li>
@@ -100,16 +107,19 @@ npm install
 <li> <strong>Fast</strong>: LevelDB levels of performance.</li>
 <li> <strong>Robust</strong>: not much to do, not much to go wrong</li>
 <li> <strong>Limited feature set</strong>: you can peristently put, get and delete. Thats it. No trade offs.</li>
-</ul><h2>Weaknesses</h2>
+</ul><h2>
+<a name="weaknesses" class="anchor" href="#weaknesses"><span class="octicon octicon-link"></span></a>Weaknesses</h2>
 
 <ul>
 <li> Single node only</li>
 <li> Not quite as blazing fast as in memory systems</li>
-</ul><h2>Future releases</h2>
+</ul><h2>
+<a name="future-releases" class="anchor" href="#future-releases"><span class="octicon octicon-link"></span></a>Future releases</h2>
 
 <ul>
 <li> Sharding</li>
-</ul><h2>License</h2>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>Copyright 2013 Fergus McDowall</p>
 
@@ -125,7 +135,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.</p>
 
-<h2>Contact</h2>
+<h2>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h2>
 
 <p>Follow/contact me on Twitter <a href="https://twitter.com/fergiemcdowall">@fergiemcdowall</a></p>
 
