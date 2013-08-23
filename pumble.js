@@ -1,4 +1,3 @@
-
 /**
  * PUMBLE
  */
@@ -6,9 +5,9 @@
 var express = require('express')
   , http = require('http')
   , path = require('path')
-  , levelup = require('levelup')
+  , level = require('level')
   , fs = require('fs')
-  , db = levelup('./pumbledb');
+  , db = level('./pumbledb');
 
 var app = express();
 
